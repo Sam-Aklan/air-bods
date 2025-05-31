@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+body{
+  @apply w-screen xl:max-w-[1440px] overflow-x-hidden xl:mx-auto min-h-screen
+}
