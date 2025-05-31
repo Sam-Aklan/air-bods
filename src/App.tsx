@@ -46,7 +46,7 @@ function App() {
 			className='h-[600vh] relative  w-full  bg-black   '
       ref={divRef}
 		>
-      <div className='sticky top-1/2  xl:top-3/4 -translate-y-1/2 xl:left-6/7 z-0 xl:w-fit'>
+      <div className='sticky top-1/2  xl:top-1/2 -translate-y-1/2 xl:left-6/7 z-0 xl:w-fit'>
 
 			<canvas
   width={1200}
