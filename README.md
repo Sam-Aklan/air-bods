@@ -4,6 +4,50 @@ react, framer motion, ffmpeg
 =======
 # React + TypeScript + Vite
 
+#ffmpeg
+use the ffmpeg open source tool to cut dowin video
+into images
+
+* ffmpeg -i video.mp4 -vf scale=1000:-1 -vcodec libwebp -compression_level 1 -qscale 80 %d.webp
+
+ffmpeg
+Invokes the FFmpeg tool.
+
+-i video.mp4
+Specifies the input file (video.mp4).
+
+-vf scale=1000:-1
+
+-vf applies a video filter.
+
+scale=1000:-1 resizes the video width to 1000 pixels while maintaining the aspect ratio (the -1 automatically calculates the height).
+
+-vcodec libwebp
+Sets the video codec to libwebp, which encodes the output as WebP images.
+
+-compression_level 1
+
+Controls the speed vs. compression efficiency of WebP encoding.
+
+1 means fastest encoding (but lower compression).
+
+Range: 0 (fastest) to 6 (slowest but best compression).
+
+-qscale 80
+
+Sets the quality level for WebP (similar to JPEG's quality setting).
+
+Range: 0 (worst) to 100 (best).
+
+80 is a good balance between quality and file size.
+
+%d.webp
+
+Output filename pattern:
+
+%d generates sequential numbers (1.webp, 2.webp, etc.)
+===
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
