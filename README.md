@@ -1,52 +1,57 @@
 
-# air-bods
-react, framer motion, ffmpeg
-=======
-# React + TypeScript + Vite
+# Air Bods ✨
 
-#ffmpeg
-use the ffmpeg open source tool to cut dowin video
-into images
+A modern React application with Framer Motion animations and FFmpeg video processing.
 
-* ffmpeg -i video.mp4 -vf scale=1000:-1 -vcodec libwebp -compression_level 1 -qscale 80 %d.webp
+## Tech Stack
 
-ffmpeg
-Invokes the FFmpeg tool.
+- ⚛️ React 19
+- 🦾 TypeScript
+- ⚡ Vite
+- 🎞️ Framer Motion
+- 🎥 FFmpeg
 
+## FFmpeg Video Processing
+
+Process videos into WebP images with this optimized command:
+
+```bash
+ffmpeg -i video.mp4 -vf scale=1000:-1 -vcodec libwebp -compression_level 1 -qscale 80 %d.webp
+
+Detailed Explanation
+Input/Output
 -i video.mp4
-Specifies the input file (video.mp4).
+Specifies the input video file (replace video.mp4 with your filename)
 
+Video Filtering
 -vf scale=1000:-1
 
--vf applies a video filter.
+-vf applies video filters
 
-scale=1000:-1 resizes the video width to 1000 pixels while maintaining the aspect ratio (the -1 automatically calculates the height).
+scale=1000:-1 resizes the width to 1000px while automatically calculating height to maintain aspect ratio
 
+Encoding
 -vcodec libwebp
-Sets the video codec to libwebp, which encodes the output as WebP images.
+Sets the output format to WebP using libwebp encoder
 
+Compression
 -compression_level 1
 
-Controls the speed vs. compression efficiency of WebP encoding.
+Controls speed vs. compression quality
 
-1 means fastest encoding (but lower compression).
+1 = fastest encoding (range: 0-6, where 6 is slowest but most compressed)
 
-Range: 0 (fastest) to 6 (slowest but best compression).
-
+Quality
 -qscale 80
 
-Sets the quality level for WebP (similar to JPEG's quality setting).
+Sets visual quality (range: 0-100)
 
-Range: 0 (worst) to 100 (best).
+80 provides excellent quality with reasonable file size
 
-80 is a good balance between quality and file size.
-
+Output
 %d.webp
-
-Output filename pattern:
-
-%d generates sequential numbers (1.webp, 2.webp, etc.)
-===
+Generates sequentially numbered files:
+1.webp, 2.webp, 3.webp, etc
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
